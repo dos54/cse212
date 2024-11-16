@@ -1,0 +1,55 @@
+@startuml a
+title Postfix calculator
+start
+
+:Initialize Stack<float> stack;
+
+:Split 'text' at each space;
+repeat 
+  :Get next item from split text;
+
+  if (item == "+" or "-" or "*" or "/") then (yes)
+    if (stack has fewer than 2 items) then (yes)
+      :Throw error "Invalid case 1!";
+      stop
+    else (no)
+      :Initialize variable op2, set it equal to last item in stack;
+      :Initialize variable op1, set it equal to last item in stack;
+      :Initialize float result;
+
+      if (item == "+") then (yes)
+        :result = op1 + op2;
+      else if (item == "-") then (yes)
+        :result = op1 - op2;
+      else if (item == "*") then (yes)
+        :result = op1 * op2;
+      else (no)
+        if (op2 == 0) then (yes)
+          :Throw error "Invalid case 2!" because division by zero is not allowed;
+          stop
+        else (no)
+          :result = op1 / op2;
+        endif
+      endif
+
+      :Push result onto stack;
+    endif
+  else if (item is a float?) then (yes)
+    :Convert item to float and push onto stack;
+  else if (item is empty?) then (yes)
+    :Go to next item;
+  else
+    :Throw error "Invalid case 3!" because the input was invalid;
+    stop
+  endif
+  
+repeat while (more items in text?)
+
+if (stack size != 1) then (yes)
+    :Throw error "Invalid case 4!" because the only remaining item should be the results;
+    stop
+endif
+
+:Return final result from stack;
+stop
+@enduml

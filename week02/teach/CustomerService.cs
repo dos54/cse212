@@ -11,23 +11,68 @@ public class CustomerService {
         // Test Cases
 
         // Test 1
-        // Scenario: 
+        // Scenario: Trying to create a queue with a size less than 10
         // Expected Result: 
         Console.WriteLine("Test 1");
-
+        var cs = new CustomerService(0);
+        Console.WriteLine(cs._maxSize); //Should default to a max queue size of 10 
         // Defect(s) Found: 
 
         Console.WriteLine("=================");
 
         // Test 2
-        // Scenario: 
-        // Expected Result: 
+        // Scenario: Add a new customer
+        // Expected Result: Display 1 customer in queue
         Console.WriteLine("Test 2");
-
+        cs.AddNewCustomer();
+        Console.WriteLine(cs.ToString());
         // Defect(s) Found: 
 
         Console.WriteLine("=================");
 
+        // Test 3
+        // Scenario: Customer service queue is full
+        // Expected Result: Error should be displayed
+        Console.WriteLine("Test 3");
+        var cs3 = new CustomerService(10);
+        var customer1 = new Customer("customer1", "1", "problem1");
+        cs3._queue.Add(customer1);
+
+        var customer2 = new Customer("customer2", "2", "problem2");
+        cs3._queue.Add(customer2);
+
+        var customer3 = new Customer("customer3", "3", "problem3");
+        cs3._queue.Add(customer3);
+
+        var customer4 = new Customer("customer4", "4", "problem4");
+        cs3._queue.Add(customer4);
+
+        var customer5 = new Customer("customer5", "5", "problem5");
+        cs3._queue.Add(customer5);
+
+        var customer6 = new Customer("customer6", "6", "problem6");
+        cs3._queue.Add(customer6);
+
+        var customer7 = new Customer("customer7", "7", "problem7");
+        cs3._queue.Add(customer7);
+
+        var customer8 = new Customer("customer8", "8", "problem8");
+        cs3._queue.Add(customer8);
+
+        var customer9 = new Customer("customer9", "9", "problem9");
+        cs3._queue.Add(customer9);
+
+        var customer10 = new Customer("customer10", "10", "problem10");
+        cs3._queue.Add(customer10);
+
+        Console.WriteLine(cs3.ToString());
+        cs3.AddNewCustomer();
+        Console.WriteLine(cs3.ToString());
+        
+        //Test 4
+        //Scenario: ServeCustomer should dequeue the next customer and display details
+        //Expected result: 
+        
         // Add more Test Cases As Needed Below
     }
 
