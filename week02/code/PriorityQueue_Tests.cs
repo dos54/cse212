@@ -10,6 +10,13 @@ public class PriorityQueueTests
     // Expected Result: first, second, third, forth, fifth
     // Defect(s) Found: Items are not removed from the queue. Items with same priority
     // are not following FIFO.
+
+    // This test adds five items to the queue with different priorities.
+    // The second and third item have the same priority; the second item should display
+    // first in order to follow FIFO.
+    // The item "fifth" is the forth item inserted, but with a lower priority than the
+    // fifth to be inserted. Thus it should appear after the item "forth".
+    // Results: After making a few changes, the test passes. 
     public void TestPriorityQueue_1()
     {
         var priorityQueue = new PriorityQueue();
@@ -31,7 +38,7 @@ public class PriorityQueueTests
     [TestMethod]
     // Scenario: Queue is empty and should return an error
     // Expected Result: Error: The queue is empty.
-    // Defect(s) Found: 
+    // Defect(s) Found: None; this feature works as intended.
     public void TestPriorityQueue_2()
     {
         var priorityQueue = new PriorityQueue();
