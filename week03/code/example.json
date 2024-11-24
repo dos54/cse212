@@ -1,0 +1,99 @@
+{
+    "type": "FeatureCollection",
+    "metadata": {
+        "generated": 1634567890123,
+        "url": "https://example.com/api",
+        "title": "Earthquake Data",
+        "api": "1.10.3",
+        "count": 2,
+        "status": 200
+    },
+    "bbox": [
+        -180.0,
+        -90.0,
+        0.0,
+        180.0,
+        90.0,
+        700.0
+    ],
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 5.2,
+                "place": "10km NE of Example City",
+                "time": 1634567890123,
+                "updated": 1634567900000,
+                "tz": -480,
+                "url": "https://example.com/event/123456",
+                "detail": "https://example.com/detail/123456",
+                "felt": 42,
+                "cdi": 4.5,
+                "mmi": 3.2,
+                "alert": "green",
+                "status": "reviewed",
+                "tsunami": 0,
+                "sig": 416,
+                "net": "us",
+                "code": "123456",
+                "ids": ",us123456,",
+                "sources": "us",
+                "types": "earthquake",
+                "nst": 24,
+                "dmin": 0.123,
+                "rms": 0.56,
+                "gap": 45.0,
+                "magType": "mb",
+                "type": "earthquake"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -115.85,
+                    33.23,
+                    5.0
+                ]
+            },
+            "id": "123456"
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "mag": 4.8,
+                "place": "20km SW of Another City",
+                "time": 1634567889123,
+                "updated": 1634567899000,
+                "tz": -360,
+                "url": "https://example.com/event/654321",
+                "detail": "https://example.com/detail/654321",
+                "felt": 18,
+                "cdi": 3.8,
+                "mmi": 2.9,
+                "alert": "yellow",
+                "status": "reviewed",
+                "tsunami": 1,
+                "sig": 384,
+                "net": "ci",
+                "code": "654321",
+                "ids": ",ci654321,",
+                "sources": "ci",
+                "types": "earthquake,tsunami",
+                "nst": 16,
+                "dmin": 0.256,
+                "rms": 0.45,
+                "gap": 60.0,
+                "magType": "ml",
+                "type": "earthquake"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -123.45,
+                    37.78,
+                    10.0
+                ]
+            },
+            "id": "654321"
+        }
+    ]
+}
